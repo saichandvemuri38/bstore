@@ -1,0 +1,17 @@
+<!-- <p>header works!</p> -->
+<nav class="navbar bg-white shadow-sm">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+    <div class="col-4 mb-0 logo" routerLink="/user-dashboard"><img src="../../../assets/images/library-logo.png" class="img-fluid"></div>
+    <h4 class="col-4 text-center AvenirLTStd-Heavy mb-0">Book Store </h4>
+
+    <div class="col-4 text-end">
+      <p-avatar icon="pi pi-building" styleClass="me-2 cursor-pointer" pTooltip="Store List" routerLink="user-dashboard" size="small" shape="circle"  *ngIf="payload.role == 'Student'"></p-avatar>
+      <p-avatar icon="pi pi-plus" styleClass="me-2 cursor-pointer" tooltipPosition="left" pTooltip="Add Book" routerLink="admin-dashboard" size="small" shape="circle"  *ngIf="payload.role == 'Admin'"></p-avatar>
+      <p-avatar icon="pi pi-sign-in" pTooltip="Books Transactions History" tooltipPosition="left" styleClass="me-2 cursor-pointer" routerLink="records" size="small" shape="circle"  *ngIf="payload.role == 'Student'"></p-avatar>
+      <!-- <p-avatar icon="pi pi-book" styleClass="me-2 cursor-pointer" tooltipPosition="left" pTooltip="Reserve Book List" routerLink="reserve-book" size="small" shape="circle"  *ngIf="payload.role == 'Student'"></p-avatar> -->
+      <p-avatar  icon="pi pi-user" styleClass="me-2 cursor-pointer" size="small" shape="circle"  (click)="menu.toggle($event)"></p-avatar>
+      <p-menu [model]="items" #menu [popup]="true"></p-menu>
+    </div>
+
+  </div>
+</nav>

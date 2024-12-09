@@ -1,0 +1,51 @@
+table {
+  border-collapse: separate;
+  border-spacing: 0 5px !important;
+
+  th {
+    padding: 10px 10px !important;
+  }
+
+  td {
+    padding: 8px 10px !important;
+    border: 0 !important;
+    vertical-align: middle;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3b566e !important;
+
+    img {
+      height: 35px !important;
+    }
+
+    .p-image-preview {
+      height: auto !important;
+    }
+
+  }
+
+  tr:nth-child(even) {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.16);
+    // background-color: #f6f6f6 !important;
+  }
+
+  .p-button-sm {
+    padding: 6px 10px !important;
+  }
+}
+
+
+.p-datatable-wrapper {
+  overflow: auto;
+  height: 83vh;
+.p-datatable-thead{
+  position: sticky;
+  top: 0;
+  z-index: 998;
+}
+}

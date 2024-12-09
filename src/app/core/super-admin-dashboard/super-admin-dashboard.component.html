@@ -1,0 +1,116 @@
+<!-- <p>super-admin-dashboard works!</p> -->
+<div class=" mt-2 ">
+  <!-- <button pButton pRipple label="Add Library" ></button>
+  <button pButton pRipple label="Add Admin" class=" ms-2"></button> -->
+  <div class="row m-0">
+    <div class="my-2 col-8">
+      <p-card header="Add Book Store Location" >
+        <form [formGroup]="addLibraryForm">
+          <div class="mt-3">
+            <span class="p-float-label">
+              <input pInputText id="1" class="w-100" formControlName="name"/>
+              <label htmlFor="1">Library Name</label>
+            </span>
+          </div>
+          <!-- <div class="mt-4">
+            <input type="file" class="form-control" (change)="onUpload($event)">
+          </div> -->
+          <h5 class="my-2">Address</h5>
+          <div class="row">
+            <div class="mt-3 col-6" >
+              <span class="p-float-label">
+                <input pInputText id="2" class="w-100" formControlName="street"/>
+                <label htmlFor="2">Street</label>
+              </span>
+            </div>
+            <div class="mt-3 col-6 ps-0">
+              <span class="p-float-label">
+                <input pInputText id="3" class="w-100" formControlName="city"/>
+                <label htmlFor="3">City</label>
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mt-4 col-6 ">
+              <span class="p-float-label">
+                <input pInputText id="4" class="w-100" formControlName="state"/>
+                <label htmlFor="4">State</label>
+              </span>
+            </div>
+            <div class="mt-4 col-6 ps-0">
+              <span class="p-float-label">
+                <input pInputText id="5" class="w-100" formControlName="zip4"/>
+                <label htmlFor="5">Zip4</label>
+              </span>
+            </div>
+          </div>
+          <div class="text-end">
+            <button pButton pRipple label="Submit" class="mt-3" (click)="onAddLibrarySubmit()"></button>
+          </div>
+        </form>
+      </p-card>
+    </div>
+    <div class="col-4">
+      <div class="d-flex align-items-center justify-content-center h-100">
+        <p-card [style]="{width: '420px',margin :'0 auto'}" styleClass="p-card-shadow">
+          <h5 class="text-center mb-4">Add Store Admin User</h5>
+          <form [formGroup]="registerData" (ngSubmit)="onSubmit()" class=" ">
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" pInputText placeholder="First Name" formControlName="fname" required
+                [class.is-invalid]="registerValid['fname'].invalid && registerValid['fname'].touched">
+              <div class="" *ngIf="registerValid['fname'].errors && registerValid['fname'].touched">
+                <small class="text-danger" *ngIf="registerValid['fname'].errors['required']">First Name</small>
+              </div>
+            </div>
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" pInputText placeholder="Last Name" formControlName="lname" required
+                [class.is-invalid]="registerValid['lname'].invalid && registerValid['lname'].touched">
+              <div class="" *ngIf="registerValid['lname'].errors && registerValid['lname'].touched">
+                <small class="text-danger" *ngIf="registerValid['lname'].errors['required']">Last Name</small>
+              </div>
+            </div>
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" pInputText placeholder="Email" formControlName="email" required
+                [class.is-invalid]="registerValid['email'].invalid && registerValid['email'].touched">
+              <div class="" *ngIf="registerValid['email'].errors && registerValid['email'].touched">
+                <small class="text-danger" *ngIf="registerValid['email'].errors['required']">Enter email</small>
+                <small class="text-danger" *ngIf="registerValid['email'].errors?.['pattern']">Enter Valid email</small>
+              </div>
+            </div>
+            <div class="form-group mb-2">
+              <p-dropdown [options]="roles" formControlName="usertype" optionValue="name"  optionLabel="name" placeholder="Selct Role Type" class="w-100 " styleClass="w-100"></p-dropdown>
+              <div class="" *ngIf="registerValid['usertype'].errors && registerValid['usertype'].touched">
+                <small class="text-danger" *ngIf="registerValid['usertype'].errors['required']">Enter Role</small>
+              </div>
+            </div>
+            <div class="form-group mb-2">
+              <p-dropdown [options]="libraryList" formControlName="library_name" optionValue="name" [autoDisplayFirst]="false"  optionLabel="name" placeholder="Selct Library" class="w-100 " styleClass="w-100"></p-dropdown>
+              <div class="" *ngIf="registerValid['library_name'].errors && registerValid['library_name'].touched">
+                <small class="text-danger" *ngIf="registerValid['library_name'].errors['required']">Enter Library</small>
+              </div>
+            </div>
+            <div class="form-group mb-2">
+              <input type="password" class="form-control" pInputText placeholder="Password" formControlName="password"
+                [class.is-invalid]="registerValid['password'].invalid && registerValid['password'].touched">
+              <div class="" *ngIf="registerValid['password'].errors && registerValid['password'].touched">
+                <small class="text-danger" *ngIf="registerValid['password'].errors['required']">Enter Passsword</small>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" pInputText placeholder="Confrim Password" formControlName="confirmPassword"
+                [class.is-invalid]="registerValid['confirmPassword'].invalid && registerValid['confirmPassword'].touched">
+              <div class="" *ngIf="registerValid['confirmPassword'].errors && registerValid['confirmPassword'].touched">
+                <small class="text-danger" *ngIf="registerValid['confirmPassword'].errors['required']">Confirm Passsword</small>
+              </div>
+            </div>
+            <div class="sizes mt-2 text-center">
+              <p-button label="Submit" icon="pi pi-check" styleClass="p-button-sm" type="submit"></p-button>
+            </div>
+
+          </form>
+
+        </p-card>
+      </div>
+    </div>
+  </div>
+</div>

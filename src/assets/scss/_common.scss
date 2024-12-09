@@ -1,0 +1,31 @@
+
+html {
+  font-size: 16px;
+}
+body {
+  @include margin(0, 0, 0, 0);
+  @include size(null, 100vh);
+  font-family: "AvenirLTSTD-Roman", sans-serif;
+  background-color: #e0e1e2;
+}
+
+.bg-white{
+  background-color: $white;
+}
+.bg-cont{
+  background-image: url("../images/library-bg.jpg");
+  background-size: cover;
+  background-color: #2121216b;
+  background-blend-mode: color-burn;
+}
+.p-dropgvhn{
+  .p-dropdown-label.p-placeholder{
+    text-align: left;
+  }
+  .p-dropdown-label{
+    text-align: left;
+  }
+  .p-dropdown-item{
+    text-align: left;
+  }
+}

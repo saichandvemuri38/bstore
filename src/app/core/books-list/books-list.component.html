@@ -1,0 +1,80 @@
+
+<!-- <p>book-user-records works!</p> -->
+<div class="m-3">
+  <p-table [value]="bookList" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Description</th>
+        <th>Department</th>
+        <th>Status</th>
+        <!-- <th>Shelves</th> -->
+        <th>Available Books</th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+
+        <td>{{ product.name }}</td>
+        <td>{{ product.author }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.department }}</td>
+        <td>{{product.status == "reserved" ? 'Reserved':'Available'}}</td>
+        <!-- <td>{{product.shelve}}</td> -->
+        <td>{{product.quantity}}</td>
+        <td>
+          <!-- <p-button icon="pi pi-book" rounded="true" text="true" raised="true" pTooltip="Reserve Book" *ngIf="!(product.status == 'reserved')"
+          (click)="submitReserveBook(product)"></p-button> -->
+          <p-button icon="pi pi-dollar" pTooltip="Buy Book" class="ms-2" rounded="true" text="true" raised="true" *ngIf="!(product.status == 'reserved')"
+            (onClick)="checkIn(product)"></p-button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<p-dialog header="Payment Portal" [modal]="true" [(visible)]="payment" [closable]="true" [style]="{width: '50vw'}">
+  <div class="credit-card-form">
+    <img class="Image1" src="https://i.ibb.co/hgJ7z3J/6375aad33dbabc9c424b5713-card-mockup-01.png"
+      alt="6375aad33dbabc9c424b5713-card-mockup-01" >
+    <div>
+      <div class="form-group p-dropgvhn">
+        <p-dropdown [options]="cardType" styleClass=""  optionValue="name"  optionLabel="name" placeholder="Card Type" class="w-100 " styleClass="w-100"></p-dropdown>
+      </div>
+      <div class="form-group">
+        <input type="text" id="card-number" pInputText placeholder="Card number">
+      </div>
+      <div class="form-group">
+        <input type="text" id="card-holder" pInputText placeholder="Card holder's name">
+      </div>
+      <div class="form-row justify-content-between">
+        <div class="form-group form-column">
+          <input type="text" id="expiry-date" pInputText placeholder="MM/YY">
+        </div>
+        <div class="form-group form-column ms-2">
+          <input type="text" id="cvv"  placeholder="CVV">
+        </div>
+        <div class="form-group form-column ms-2">
+          <input type="text" id="cvv"  placeholder="Total Books" [(ngModel)]="quantitySelected">
+        </div>
+      </div>
+      <p-button type="submit" class="" p-button (click)="paymentSuccess()">PAY NOW - ${{paymentRecords?.fine}}</p-button>
+    </div>
+  </div>
+
+</p-dialog>
+
+<!-- <p-dialog header="Reserve Book" [modal]="true" [(visible)]="checkoutBook" [closable]="false" [style]="{width: '50vw'}">
+  <div class="w-100">
+    <span class="p-float-label mt-4">
+      <p-dropdown [options]="libraryList" class="w-100" styleClass="w-100" optionLabel="name" appendTo="body"
+        [(ngModel)]="checkOutLibName" [autoDisplayFirst]="false"></p-dropdown>
+      <label htmlFor="2">To Library Name</label>
+    </span>
+    <div class="d-flex align-items-center justify-content-between">
+      <p-button severity="secondary" label="Close" (click)="close()" class="mt-2"></p-button>
+      <p-button severity="secondary" label="Submit" class="mt-2" (click)="submitReserveBook()"></p-button>
+    </div>
+  </div>
+</p-dialog> -->

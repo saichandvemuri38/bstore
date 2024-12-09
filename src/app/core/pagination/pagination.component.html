@@ -1,0 +1,19 @@
+
+<!-- <p>pagination works!</p> -->
+<!-- <div class="" *ngFor="let item of products">
+{{item.name}}
+</div> -->
+
+
+<select [value]="productsPerPage" (change)="changePageSize($event)">
+  <option value="4">4</option>
+  <option value="8">8</option>
+  <option value="10">10</option>
+</select>
+
+
+<select [value]="productsPerPage" (change)="changePage($event)" [(ngModel)]="test">
+  <option [value]="item"  *ngFor="let item of pageNumbers" >{{item}}</option>
+</select>
+<button (click)="prevPage()" [disabled]="selectedPage == 1">Prev</button>
+<button (click)="nextPage()" [disabled]="test == pageNumbers.pop()">Next</button>

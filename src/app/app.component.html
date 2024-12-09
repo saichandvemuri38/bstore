@@ -1,0 +1,5 @@
+<h2 *ngIf="spinnerCheck" class="spinner">Loading...</h2>
+<app-header *ngIf="auth.loggedIn() && !loginScreen" ></app-header>
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,100 @@
+/*  Mixin For Position */
+@mixin position($top, $right, $bottom, $left) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+/* Mixin For Padding */
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+/* Mixin For Margin */
+@mixin margin($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+/* Mixin For Size */
+@mixin size($max-width, $height) {
+  max-width: $max-width;
+  height: $height;
+}
+@mixin msize($width, $height) {
+  width: $width;
+  height: $height;
+}
+/* Mixin For Transition */
+@mixin transition($properity, $duration, $function) {
+  -webkit-transition-property: $properity;
+  -moz-transition-property: $properity;
+  transition-property: $properity;
+  -webkit-transition-duration: $duration;
+  -moz-transition-duration: $duration;
+  transition-duration: $duration;
+  -webkit-transition-timing-function: $function;
+  -moz-transition-timing-function: $function;
+  transition-timing-function: $function;
+}
+/* Mixin For Transform */
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  -o-transform: $transforms;
+  transform: $transforms;
+}
+/* Mixin For Translate */
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+/* Mixin For Skew */
+@mixin skew($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+@mixin border-radius($topleft, $topright, $bottomright, $bottomleft) {
+  border-top-left-radius: $topleft;
+  border-top-right-radius: $topright;
+  border-bottom-right-radius: $bottomright;
+  border-bottom-left-radius: $bottomleft;
+  -webkit-border-top-left-radius: $topleft;
+  -webkit-border-top-right-radius: $topright;
+  -webkit-border-bottom-right-radius: $bottomright;
+  -webkit-border-bottom-left-radius: $bottomleft;
+  -moz-border-radius-topleft: $topleft;
+  -moz-border-radius-topright: $topright;
+  -moz-border-radius-bottomright: $bottomright;
+  -moz-border-radius-bottomleft: $bottomleft;
+}
+/* user Select */
+@mixin user-select($property) {
+  -webkit-user-select: $property;
+  -moz-user-select: $property;
+  -ms-user-select: $property;
+  user-select: $property;
+}
+// color
+@mixin color($color) {
+  color: $color;
+}
+// bg-clr
+@mixin bg-color($bg-color, $color) {
+  background-color: $bg-color;
+  color: $color;
+}
+//font-size
+@mixin font-size($font-size) {
+  font-size: $font-size;
+}
+//slide-icons
+@mixin slide-icons($font-family,$display,$vetrical-align,$font-weight,$color){
+  font-family: $font-family;
+  display: $display;
+  vertical-align: $vetrical-align;
+  font-weight: $font-weight;
+  color: $color;
+}

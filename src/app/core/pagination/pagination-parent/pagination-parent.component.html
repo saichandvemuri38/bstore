@@ -1,0 +1,5 @@
+<!-- <p>pagination-parent works!</p> -->
+<div class="" *ngFor="let item of products">
+  {{item.name}}
+</div>
+<app-pagination (childEvent)="receivedValues($event)"></app-pagination>

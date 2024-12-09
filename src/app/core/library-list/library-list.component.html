@@ -1,0 +1,39 @@
+<!-- <div class="nav ">
+  <p-card *ngFor="let item of libraryList" [header]="item.name" [style]="{ width: '360px',margin:'10px'}">
+    <ng-template pTemplate="header">
+      <div class="" style="height: 150px;">
+        <img [alt]="item.name" class="h-100 img-fluid" [src]="item.image" />
+      </div>
+    </ng-template>
+    <p>
+      {{item.discription}}
+    </p>
+    <div class="">
+      <span class="d-flex align-items-center"> <span
+          class="pi pi-map-marker me-2"></span>{{item.street}}{{item.city}}{{item.state}}{{item.zip4}}</span>
+    </div>
+    <div class="text-end">
+      <p-button icon="pi pi-arrow-right" rounded="true" text="true" raised="true" [queryParams]="{libraryname:item.name??null}" routerLink="/book-list"></p-button>
+    </div>
+  </p-card>
+</div> -->
+
+<div class="m-3">
+  <p-table [value]="libraryList" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Store Name</th>
+        <th>Address</th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td>{{ product.name }}</td>
+        <td>{{product.street}}&nbsp;{{product.city}}&nbsp;&nbsp;{{product.state}}&nbsp;{{product.zip4}}</td>
+        <td> <p-button icon="pi pi-arrow-right" styleClass="p-button-sm" rounded="true" label="View Books" text="true" raised="true" [queryParams]="{libraryname:product.name??null}" routerLink="/book-list"></p-button></td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+

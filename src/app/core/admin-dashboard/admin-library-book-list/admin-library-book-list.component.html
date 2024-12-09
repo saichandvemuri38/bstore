@@ -1,0 +1,27 @@
+<!-- <p>admin-library-book-list works!</p> -->
+<div class="m-3">
+  <p-table [value]="bookList" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Description</th>
+        <th>Department</th>
+        <th>Shelves</th>
+        <th>Available Books</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+
+        <td>{{ product.name }}</td>
+        <td>{{ product.author }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.department }}</td>
+        <td>{{product.shelve}}</td>
+        <td>{{product.availableBooks}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

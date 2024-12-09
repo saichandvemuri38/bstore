@@ -1,0 +1,22 @@
+<!-- <p>admin-library-book-list works!</p> -->
+<div class="m-3">
+  <p-table [value]="fineList" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Book Name</th>
+        <th>Library</th>
+        <th>User Name</th>
+        <th>Amount</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+
+        <td>{{ product.bookname }}</td>
+        <td>{{ product.libraryname }}</td>
+        <td>{{ product.userName }}</td>
+        <td>{{ product.amount }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
